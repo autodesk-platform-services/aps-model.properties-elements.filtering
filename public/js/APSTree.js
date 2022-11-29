@@ -1,6 +1,6 @@
 ﻿/////////////////////////////////////////////////////////////////////
-// Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Copyright 2022 Autodesk Inc
+// Written by Developer Advacacy and Support
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -27,7 +27,7 @@ $(document).ready(function () {
 
   // first, check if current visitor is signed in
   jQuery.ajax({
-    url: '/api/forge/oauth/token',
+    url: '/api/aps/oauth/token',
     success: function (res) {
       // yes, it is signed in...
       $('#signOut').show();
@@ -36,11 +36,11 @@ $(document).ready(function () {
       // prepare sign out
       $('#signOut').click(function () {
         $('#hiddenFrame').on('load', function (event) {
-          location.href = '/api/forge/oauth/signout';
+          location.href = '/api/aps/oauth/signout';
         });
         $('#hiddenFrame').attr('src', 'https://accounts.autodesk.com/Authentication/LogOut');
         // learn more about this signout iframe at
-        // https://forge.autodesk.com/blog/log-out-forge
+        // https://aps.autodesk.com/blog/log-out-forge
       })
 
       // and refresh button
@@ -56,7 +56,7 @@ $(document).ready(function () {
 
   $('#autodeskSigninButton').click(function () {
     jQuery.ajax({
-      url: '/api/forge/oauth/url',
+      url: '/api/aps/oauth/url',
       success: function (url) {
         location.href = url;
       }
@@ -70,7 +70,7 @@ function prepareUserHubsTree() {
       'themes': { "icons": true },
       'multiple': false,
       'data': {
-        "url": '/api/forge/datamanagement',
+        "url": '/api/aps/datamanagement',
         "dataType": "json",
         'cache': false,
         'data': function (node) {
@@ -82,11 +82,11 @@ function prepareUserHubsTree() {
     'types': {
       'default': { 'icon': 'glyphicon glyphicon-question-sign' },
       '#': { 'icon': 'glyphicon glyphicon-user' },
-      'hubs': { 'icon': 'https://github.com/Autodesk-Forge/bim360appstore-data.management-nodejs-transfer.storage/raw/master/www/img/a360hub.png' },
-      'personalHub': { 'icon': 'https://github.com/Autodesk-Forge/bim360appstore-data.management-nodejs-transfer.storage/raw/master/www/img/a360hub.png' },
-      'bim360Hubs': { 'icon': 'https://github.com/Autodesk-Forge/bim360appstore-data.management-nodejs-transfer.storage/raw/master/www/img/bim360hub.png' },
-      'bim360projects': { 'icon': 'https://github.com/Autodesk-Forge/bim360appstore-data.management-nodejs-transfer.storage/raw/master/www/img/bim360project.png' },
-      'a360projects': { 'icon': 'https://github.com/Autodesk-Forge/bim360appstore-data.management-nodejs-transfer.storage/raw/master/www/img/a360project.png' },
+      'hubs': { 'icon': 'https://github.com/autodesk-platform-services/resources/blob/main/wwwroot/dm/a360hub.png' },
+      'personalHub': { 'icon': 'https://github.com/autodesk-platform-services/resources/blob/main/wwwroot/dm/a360hub.png' },
+      'bim360Hubs': { 'icon': 'https://github.com/autodesk-platform-services/resources/blob/main/wwwroot/dm/a360hub.png' },
+      'bim360projects': { 'icon': 'https://github.com/autodesk-platform-services/resources/blob/main/wwwroot/dm/bim360project.png' },
+      'a360projects': { 'icon': 'https://github.com/autodesk-platform-services/resources/blob/main/wwwroot/dm/accproject.png' },
       'folders': { 'icon': 'glyphicon glyphicon-folder-open' },
       'items': { 'icon': 'glyphicon glyphicon-file' },
       'bim360documents': { 'icon': 'glyphicon glyphicon-file' },
@@ -115,7 +115,7 @@ function prepareUserHubsTree() {
         var id = data.node.id.split('|')[0];
         global_queryBuilder.project_id = data.node.id.split('|')[2].split('b.')[1];
 
-        loadModel(forgeViewer_left, urn)
+        loadModel(apsViewer_left, urn)
         global_queryBuilder.model_urn = urn
         global_queryBuilder.model_version = id
       }
@@ -128,7 +128,7 @@ function prepareUserHubsTree() {
 
 function showUser() {
   jQuery.ajax({
-    url: '/api/forge/user/profile',
+    url: '/api/aps/user/profile',
     success: function (profile) {
       var img = '<img src="' + profile.picture + '" height="30px">';
       $('#userInfo').html(img + profile.name);

@@ -1,6 +1,6 @@
 ﻿/////////////////////////////////////////////////////////////////////
-// Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Copyright 2022 Autodesk Inc
+// Written by Develope Advocacy and Support
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -185,7 +185,7 @@ class QueryBuilder {
       $('#indexing_running_img').show()
 
       $.ajax({
-        url: '/api/forge/index/' + global_queryBuilder.project_id + '/false',
+        url: '/api/aps/index/' + global_queryBuilder.project_id + '/false',
         type: 'POST',
         dataType: 'json',
         data: {
@@ -210,7 +210,7 @@ class QueryBuilder {
       if (global_queryBuilder.ids.length == 0)
         alert('no objects are found!')
       else
-        loadModel(forgeViewer_right, global_queryBuilder.model_urn)
+        loadModel(apsViewer_right, global_queryBuilder.model_urn)
     });
 
     $('#query').on('click', function () {
@@ -312,7 +312,7 @@ class QueryBuilder {
 
       $('#query_running_img').show()
       $.ajax({
-        url: '/api/forge/query/' + global_queryBuilder.project_id + '/' + global_queryBuilder.index_id + '/false',
+        url: '/api/aps/query/' + global_queryBuilder.project_id + '/' + global_queryBuilder.index_id + '/false',
         type: 'POST',
         dataType: 'json',
         data: { query: JSON.stringify(payload) },
