@@ -39,8 +39,7 @@ $(document).ready(function () {
           location.href = '/api/aps/oauth/signout';
         });
         $('#hiddenFrame').attr('src', 'https://accounts.autodesk.com/Authentication/LogOut');
-        // learn more about this signout iframe at
-        // https://aps.autodesk.com/blog/log-out-forge
+        
       })
 
       // and refresh button
