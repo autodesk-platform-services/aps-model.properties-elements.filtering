@@ -20,7 +20,9 @@
 This sample demonstrates the use case of filtering model elements with specific queries conditions and load the filtered elements in Viewer SDK. It uses **Model Properties API** to index & query the elements.
 
 # Thumbnail
-<img src="./help/main.png" width="800"> 
+![thumbnail](thumbnail.png)
+
+
 
 # Demonstration
 [![https://youtu.be/X2FCxfJi2g8](http://img.youtube.com/vi/dxqxKUyitU0/0.jpg)](https://youtu.be/dxqxKUyitU0 "APS Filter Elements by Index API of BIM360/ACC")
