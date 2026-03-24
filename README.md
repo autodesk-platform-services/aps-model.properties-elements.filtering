@@ -1,4 +1,4 @@
-# BIM 360/ACC Model Properties API: Indexing and Element Filtering - Nodejs
+# Forma Model Properties API: Indexing and Element Filtering - Nodejs
 
 [![Node.js](https://img.shields.io/badge/Node.js-14.0-blue.svg)](https://nodejs.org/)
 [![npm](https://img.shields.io/badge/npm-6.14-blue.svg)](https://www.npmjs.com/)
@@ -23,7 +23,7 @@ This sample demonstrates the use case of filtering model elements with specific 
 ![thumbnail](./thumbnail.png)
 
 # Demonstration
-[![https://youtu.be/X2FCxfJi2g8](http://img.youtube.com/vi/dxqxKUyitU0/0.jpg)](https://youtu.be/dxqxKUyitU0 "APS Filter Elements by Index API of BIM360/ACC")
+[![https://youtu.be/X2FCxfJi2g8](http://img.youtube.com/vi/dxqxKUyitU0/0.jpg)](https://youtu.be/dxqxKUyitU0 "APS Filter Elements by Index API of Forma")
 
 
 # Setup
@@ -31,7 +31,7 @@ This sample demonstrates the use case of filtering model elements with specific 
 ## Prerequisites
 
 1. **APS Account**: Learn how to create a APS Account, activate subscription and create an app at [this tutorial](http://learnforge.autodesk.io/#/account/). For this new app, use **http://localhost:3000/api/aps/callback/oauth** as Callback URL. Finally take note of the **Client ID**, **Client Secret** and Callback URL.
-2. **BIM 360 or ACC Account**: must be Account Admin to add the app integration. [Learn about provisioning](https://forge.autodesk.com/blog/bim-360-docs-provisioning-forge-apps). 
+2. **Forma Account**: must be Account Admin to add the app integration. [Learn about provisioning](https://forge.autodesk.com/blog/bim-360-docs-provisioning-forge-apps). 
 3. **Node.js**: basic knowledge with [**Node.js**](https://nodejs.org/en/).
 4. Basic knowledge with **html5**,**JavaScript**, **css**,**jQuery** and **bootstrap**
 5. Basic knowledge with **Data Management API with BIM 360/Docs**, **Viewer SDK** and **Model Properties API** etc.
